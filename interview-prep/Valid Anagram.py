@@ -11,3 +11,7 @@ class Solution:
             if t[i] != s[i]:
                 return False
         return True 
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s) == Counter(t)
