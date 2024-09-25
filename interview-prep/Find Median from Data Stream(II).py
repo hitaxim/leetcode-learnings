@@ -15,3 +15,22 @@ class MedianFinder:
             return float(self.large[0] - self.small[0]) / 2
         else:
             return float(self.large[0])
+
+ORRRRRRR
+
+import statistics
+
+class MedianFinder:
+
+    def __init__(self):
+        self.ans = []
+
+    def addNum(self, num: int) -> None:
+        for i in range(len(self.ans)):
+            if(num<= self.ans[i]):
+                self.ans.insert(i, num)
+                return 
+        self.ans.append(num)
+
+    def findMedian(self) -> float:
+        return statistics.median(self.ans)
