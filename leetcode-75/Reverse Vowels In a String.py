@@ -15,3 +15,25 @@ class Solution:
            right -= 1
        s=''.join(s)
        return s
+
+
+ORRRRRRR
+"""
+        vowels = []
+        vowel = set('AEIOUaeiou')
+        c = ""
+        for i in s:
+            if i in vowel:
+                vowels.append(i)
+        vowels = vowels[::-1]
+        print(vowels)
+        m = 0
+        for i in range(len(s)): 
+            if s[i] in vowel:
+                c += vowels[m]
+                m += 1
+                continue
+            c += s[i]
+              
+        return c
+        """
