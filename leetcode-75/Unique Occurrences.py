@@ -13,3 +13,27 @@ class Solution:
                return False
            check.add(i)
        return True
+
+#ORRRRRRR
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        freqCount = Counter(arr)
+
+        return len(set(freqCount.values())) == len(freqCount)
+
+
+#ORRRRRR
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        ans = {}
+        for x in arr:
+            if x not in ans:
+                ans[x] = 1
+            else:
+                ans[x] += 1
+        if len(ans.values()) == len(set(ans.values())):
+            return True
+        else :
+            return False     
