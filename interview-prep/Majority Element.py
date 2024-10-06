@@ -21,7 +21,21 @@ def majorityElement(arr):
     # If no majority element found, return -1
     return -1
 
-if __name__ == "__main__":
-    arr = [1, 1, 2, 1, 3, 5, 1]
 
-    print(majorityElement(arr))
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()
+        return nums[int(len(nums)/2)]
+
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        seen = {}
+        n = len(nums)
+        for x in nums: 
+            seen[x] = seen.get(x,0) + 1
+            if seen[x] > n // 2:
+                return x
+        
+       
