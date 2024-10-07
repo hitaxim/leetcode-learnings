@@ -1,0 +1,6 @@
+class Solution:
+    def maxGoodNumber(self, nums: List[int]) -> int:
+        a, b, c = [bin(x)[2:] for x in nums]
+
+        permutations = [a+b+c, a+c+b, b+a+c, b+c+a, c+a+b, c+b+a]
+        return max(int(x, base=2) for x in permutations )
