@@ -1,5 +1,5 @@
 # leetcode-learnings
-I have created this repository for including my leetcode learnings and important techniques I find helpful
+I have created this repository for my leetcode learnings and important techniques I find helpful
 
 
 #### 1. DAILY STREAK PROBLEMS 
