@@ -1,17 +1,16 @@
 class Solution:
-    def minimumAddedCoins(self, coins: List[int], target: int) -> int:
-        coins.sort()
-        
-        extraCoins = reachable = 0
-        for coin in coins:
-            while reachable < (coin - 1):
-                reachable = 2 * reachable + 1
-                extraCoins += 1
-            reachable += coin
-        
-        while reachable < target:
-            reachable = 2 * reachable + 1
-            extraCoins += 1 
-        
-        return extraCoins
-        
+    def minimumAddedCoins(self, nums: List[int], target: int) -> int:
+        nums.sort()
+        current_max = 0
+        additions = 0
+        index = 0
+
+        while current_max < target:
+            if index < len(nums) and nums[index] <= current_max + 1:
+                current_max += nums[index]
+                index += 1
+            else:
+                current_max += current_max + 1
+                additions += 1
+
+        return additions
