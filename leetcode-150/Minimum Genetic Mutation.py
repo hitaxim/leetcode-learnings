@@ -1,28 +1,25 @@
-from collections import deque
-
 class Solution:
     def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:
-        def neighbors(node):
-            for i in range(len(node)):
-                for g in ["A", "C", "G", "T"]:
-                    if node[i] != g:
-                        yield f"{node[:i]}{g}{node[i + 1:]}"
-
-        bank = set(bank)
-        if endGene not in bank:
+        bankSet = set(bank)
+        if endGene not in bankSet:
             return -1
-
-        queue = deque([(startGene, 0)])
-        seen = {startGene}
-
+        
+        queue = deque([startGene])
+        mutations = 0
+        
         while queue:
-            node, step = queue.popleft()
-            if node == endGene:
-                return step
-
-            for n in generate_neighbors(node):
-                if n not in seen and n in bank:
-                    seen.add(n)
-                    queue.append((n, step + 1))
-
+            for _ in range(len(queue)):
+                gene = queue.popleft()
+                if gene == endGene:
+                    return mutations
+                
+                for i in range(len(gene)):
+                    for c in "ACGT":
+                        mutated = gene[:i] + c + gene[i+1:]
+                        if mutated in bankSet:
+                            queue.append(mutated)
+                            bankSet.remove(mutated)
+            
+            mutations += 1
+        
         return -1
