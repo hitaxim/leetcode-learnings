@@ -1,23 +1,40 @@
 class Solution:
-    def kSmallestPairs(self, nums1, nums2, k):
-        resV = []  # Result list to store the pairs
-        pq = []  # Priority queue to store pairs with smallest sums, sorted by the sum
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        heap = []
 
-        # Push the initial pairs into the priority queue
+        for i in range(min(k, len(nums2))):
+            heappush(heap, (nums1[0] + nums2[i], 0, i))
+
+        ans = []
+
+        while heap and len(ans) < k:
+            _, i, j = heappop(heap)
+            ans.append([nums1[i], nums2[j]])
+
+            if i + 1 < len(nums1):
+                heappush(heap, (nums1[i + 1] + nums2[j], i + 1, j))
+
+        return ans
+        
+"""
+class Solution:
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        res = []
+        pq = []
+
         for x in nums1:
-            heapq.heappush(pq, [x + nums2[0], 0])  # The sum and the index of the second element in nums2
+            heapq.heappush(pq, [x + nums2[0], 0])
 
-        # Pop the k smallest pairs from the priority queue
-        while k > 0 and pq:
+        while k > 0 and pq: 
             pair = heapq.heappop(pq)
-            s, pos = pair[0], pair[1]  # Get the smallest sum and the index of the second element in nums2
+            s, pos = pair[0], pair[1]
 
-            resV.append([s - nums2[pos], nums2[pos]])  # Add the pair to the result list
+            res.append([s - nums2[pos], nums2[pos]])
 
-            # If there are more elements in nums2, push the next pair into the priority queue
             if pos + 1 < len(nums2):
                 heapq.heappush(pq, [s - nums2[pos] + nums2[pos + 1], pos + 1])
+        
+            k -= 1
 
-            k -= 1  # Decrement k
-
-        return resV  # Return the k smallest pairs
+        return res
+"""  
