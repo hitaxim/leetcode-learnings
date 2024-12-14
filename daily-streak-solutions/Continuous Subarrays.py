@@ -21,3 +21,33 @@ class Solution:
             total_subarrays += end - start + 1
         
         return total_subarrays
+
+"""
+class Solution:
+    def continuousSubarrays(self, nums: List[int]) -> int:
+        minqueue = deque()
+        maxqueue = deque()
+
+        result = 0
+        left = 0
+
+        for idx,val in enumerate(nums):
+            while minqueue and minqueue[-1][1] >= val:
+                minqueue.pop()
+            minqueue.append((idx,val))
+
+            while maxqueue and maxqueue[-1][1] <= val:
+                maxqueue.pop()
+            
+            maxqueue.append((idx,val))
+
+            while maxqueue[0][1] - minqueue[0][1] > 2:
+                if maxqueue[0][0] == left:
+                    maxqueue.popleft()
+                
+                if minqueue[0][0] == left:
+                    minqueue.popleft()
+                left += 1
+            result += idx - left + 1
+        return result
+"""
