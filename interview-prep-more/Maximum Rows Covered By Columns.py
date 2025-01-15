@@ -1,14 +1,14 @@
-"""
+
 from itertools import combinations
 class Solution:
     def maximumRows(self, matrix: List[List[int]], numSelect: int) -> int:
         rows = 0
-        for c in combinations(range(len(mat[0])), cols):
+        for c in combinations(range(len(matrix[0])), numSelect):
             temp = 0
-            for r in mat:
+            for r in matrix:
                 valid = True
                 for col, n in enumerate(r):
-                    if valif and n == 1 and col not in c:
+                    if valid and n == 1 and col not in c:
                         valid = False
                 if valid:
                     temp += 1
@@ -31,3 +31,4 @@ class Solution:
             result = max(result, res)
         
         return result
+"""
