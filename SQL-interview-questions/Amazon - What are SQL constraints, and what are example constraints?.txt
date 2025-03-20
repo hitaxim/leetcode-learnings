@@ -1,0 +1,7 @@
+Constraints are simply rules for what data goes into your database. Some SQL constraints are:
+
+NOT NULL - Stops NULL value from being inserted
+UNIQUE - Ensures unique values are inserted
+INDEX - Speeds up querying based on optimizing for a specific column that's often used to lookup records.
+PRIMARY KEY - Uniquely identifies each record
+FOREIGN KEY - Ensures referential integrity from on record to another in a different table
