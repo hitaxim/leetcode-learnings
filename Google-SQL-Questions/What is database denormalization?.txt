@@ -1,0 +1,5 @@
+Denormalization is the process of modifying a database schema in a way that deviates from the typical rules of normalization (1NF, 2NF, 3NF, etc.).
+
+Denormalization is often used to improve the performance of a database, particularly when it is being used for reporting and analytical purposes (rather than in an Online Transaction Processing (OLTP) manager).
+
+By duplicating data, denormalization can reduce the number of expensive joins required to retrieve data, which can improve query performance. However, denormalization can also cause problems such as increased data redundancy and the need for more complex update and delete operations.
