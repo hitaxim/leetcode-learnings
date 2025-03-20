@@ -1,0 +1,6 @@
+SELECT fields instead of using SELECT *
+Avoid SELECT DISTINCT
+Create joins with INNER JOIN (not WHERE)
+Avoid JOINs in general (maybe try de-normalization)
+Add indexes to your database
+Examine the SQL query execution plan
