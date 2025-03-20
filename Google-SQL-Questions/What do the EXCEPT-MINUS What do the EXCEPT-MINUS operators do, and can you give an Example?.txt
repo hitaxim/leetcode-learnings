@@ -1,0 +1,3 @@
+The MINUS/EXCEPT operator is used to remove to return all rows from the first SELECT statement that are not returned by the second SELECT statement.
+
+Note that EXCEPT is available in PostgreSQL and SQL Server, while MINUS is available in MySQL and Oracle 
