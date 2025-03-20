@@ -1,0 +1,19 @@
+Constraints are just rules for your DBMS to follow when updating/inserting/deleting data.
+
+NOT NULL: This constraint could be used to ensure that certain columns in the employee table, such as the employee's first and last name, 
+cannot contain NULL values.
+
+UNIQUE: This constraint could be used to ensure that the employee ID is unique. 
+This would prevent duplicate entries in the employee table.
+
+PRIMARY KEY: This constraint could be used to combine the NOT NULL and UNIQUE constraints to create a primary key for the employee table. 
+The employee ID could serve as the primary key.
+
+FOREIGN KEY: This constraint could be used to establish relationships between the employee table and other tables in the database. 
+For example, you could use a foreign key to link the employee ID to the department ID in a department table to track which department each employee belongs to.
+
+CHECK: This constraint could be used to ensure that certain data meets specific conditions. 
+For example, you could use a CHECK constraint to ensure that salary values are always positive numbers.
+
+DEFAULT: This constraint could be used to specify default values for certain columns. 
+For example, you could use a DEFAULT constraint to set the employee hire date to the current date if no value is provided when a new employee is added to the database.
