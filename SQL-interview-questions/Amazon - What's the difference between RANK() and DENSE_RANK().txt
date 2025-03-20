@@ -1,0 +1,5 @@
+Essentially RANK is to SELECT what dense_rank() is to SELECT DISTINCT.
+
+RANK() gives you the ranking within your ordered partition. Ties have the same rank, with the next ranking(s) skipped. So, if you have 4 items at rank 2, the next rank listed would be ranked 6.
+
+DENSE_RANK() also ranks within your ordered partition, BUT the ranks are consecutive. This means no ranks are skipped if there are ranks with multiple items, and the rank order depends on your ORDER BY clause.
