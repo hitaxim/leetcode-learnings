@@ -1,0 +1,2 @@
+The HAVING clause works similarly to the WHERE clause, but it is used to filter the groups of rows created by the GROUP BY clause 
+rather than the rows of the table themselves.
