@@ -1,0 +1,17 @@
+Stored procedures are a lot like functions in programming. They're used to encapsulate and organize business logic into one unit of code, and they can accept multiple input parameters and return multiple output values.
+
+For example, if you were a Data Analyst at Google working on a HR analytics project, you might create a stored procedure to calculate the average salary for a given department:
+
+CREATE FUNCTION get_avg_salary(department_name TEXT)
+RETURNS NUMERIC AS
+$BODY$
+BEGIN
+  RETURN (SELECT AVG(salary) FROM google_employees WHERE department = department_name);
+END;
+$BODY$
+LANGUAGE 'plpgsql';
+
+
+To call this stored procedure and find the average salary for the Data Analytics department you'd write the following query:
+
+SELECT get_avg_salary('Data Analytics');
