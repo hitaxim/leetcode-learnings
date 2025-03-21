@@ -1,0 +1,12 @@
+Cross join and natural join are like two sides of a coin in the world of SQL.
+
+Cross joins is like the wild and reckless cousin who creates a giant new table by combining every row from table A 
+with every row from table B, no questions asked, no common key needed.
+
+Natural joins are like the more refined and selective cousin who only combines rows from multiple tables if they have 
+something in common (i.e., common columns/keys).
+
+While cross join doesn't discriminate and will create a massive table if given the chance, natural join is more selective 
+and only returns a table with the number of rows equal to the number of matching rows in the input tables. 
+
+So, choose your JOIN wisely!
