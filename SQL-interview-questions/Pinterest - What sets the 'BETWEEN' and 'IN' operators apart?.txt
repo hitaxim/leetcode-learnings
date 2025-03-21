@@ -1,0 +1,19 @@
+BETWEEN is used to select rows that match a range of values, whereas the IN operator checks for values in a specified list of values.
+
+For example, say you were a Data Analyst at Pinterest and had a table of advertising campaign data.
+
+To find campaigns with between 
+500
+a
+n
+d
+500and10k in spend, you could use BETWEEN`:
+
+SELECT * 
+FROM  pinterest_ad_campaigns
+WHERE spend BETWEEN 500 AND 10000;
+To find ad campaigns that were run on Facebook and Google's Display Network, you could use IN:
+
+SELECT * 
+FROM pinterest_ad_campaigns
+WHERE ad_platform IN ("fb", "google_display");
