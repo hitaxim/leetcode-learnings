@@ -1,0 +1,16 @@
+While both types of indexes improve the performance of SQL queries by providing a faster way to lookup rows of data, 
+a unique index enforces the uniqueness of the indexed columns while a non-unique index allows duplicate values in the indexed columns.
+
+Suppose you had a table of NVIDIA employees. Here's an example of a unique index on the employee_id column:
+
+CREATE UNIQUE INDEX employee_id_index
+ON nvidia_employees (employee_id);
+This index would ensure that no two NVIDIA employees have the same employee_id, which could be used as a unique identifier 
+for each employee.
+
+Here's a non-unique index example example on the job_title column:
+
+CREATE INDEX job_title_index
+ON nvidia_employees (job_title);
+This index would not enforce uniqueness, but it could be used to improve the performance of queries that filter 
+or sort the data based on the job_title column. 
