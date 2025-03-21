@@ -1,0 +1,26 @@
+A primary key is a column or set of columns in a table that uniquely identifies each row in the table. 
+The primary key is used to enforce the uniqueness and non-nullability of the rows in the table.
+
+In a SQL database, a primary key is defined using the PRIMARY KEY constraint. For example, say you had a table of microsoft_employees:
+
+CREATE TABLE microsoft_employees (
+    EmployeeID INTEGER PRIMARY KEY,
+    LastName VARCHAR(255),
+    FirstName VARCHAR(255),
+    Age INTEGER,
+    Salary DECIMAL(8,2)
+);
+
+In this example, the EmployeeID column is the primary key of the Microsoft employees table. 
+It is defined as an integer and is marked as the primary key using the PRIMARY KEY constraint.
+
+
+A table can have only one primary key, but the primary key can consist of multiple columns. 
+For example, say you had a table of Microsoft customer transactions:
+
+CREATE TABLE transactions (
+    TransactionID INTEGER,
+    ProductID INTEGER,
+    Quantity INTEGER,
+    PRIMARY KEY (TransactionID, ProductID)
+);
