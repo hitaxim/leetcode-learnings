@@ -1,0 +1,17 @@
+A cross-join, also known as a cartesian join, is a JOIN that produces the cross-product of two tables. In a cross-join, 
+each row from the first table is matched with every row from the second table, resulting in a new table with a row for each 
+possible combination of rows from the two input tables.
+
+Let's say you were building a Machine Learning model that attempts to score the probability of a customer 
+purchasing a Pinterest product. Before working in Pandas and Tensorflow, you might want to do some Exploratory Data Analysis 
+(EDA) in SQL, and generate all pairs of customers and Pinterest products.
+
+Here's a cross-join query you could run:
+
+SELECT customers.id AS customer_id, pinterest_products.id AS product_id
+FROM customers
+CROSS JOIN pinterest_products;
+Cross-joins are useful for generating all possible combinations, but they can also create huge tables if you're not careful. 
+For instance, if you had 10,000 potential customers and Pinterest had 500 different product SKUs, the resulting cross-join would 
+have 5 million rows!
+
