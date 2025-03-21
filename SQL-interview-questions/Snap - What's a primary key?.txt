@@ -1,0 +1,6 @@
+The primary key of a table is a column or set of columns that serves as a unique identifier for each row. 
+It ensures that all rows are distinct and does not allow null values.
+
+The primary key is also an important part of the table because it enables you to easily identify and reference specific campaigns 
+in your Snap Ad data. You can use it to join to other tables in the database, 
+such as a table with data on the results of the campaigns.
