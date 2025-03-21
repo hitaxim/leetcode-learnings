@@ -1,0 +1,18 @@
+Imagine you've got giant AF jigsaw puzzle with thousands of pieces, and each piece represents a piece of data in your database. 
+You've spent hours organizing the puzzle into neat little piles, with each pile representing a table in your database. 
+This process is called normalization, and it's a great way to make your database efficient, flexible, and easy to maintain.
+
+But what if you want to solve the puzzle faster(aka make your queries run faster?)?
+
+That's where denormalization comes in – Denormalization is like the puzzle-solving equivalent of taking a shortcut!
+
+Instead of putting all the pieces in separate piles, you might decide to clone some of the pieces, and then have that 
+one puzzle piece be put into multiple piles. Clearly, we are breaking the rules of physics, but that's just like de-normalization 
+because it breaks the normal rules of normalization (1st, 2nd, 3rd normal forms).
+
+By adding redundant puzzle pieces, it can be easier to find the pieces you need, but it also means that you have to be extra 
+careful when you're moving pieces around or adding new ones (aka INSERT/UPDATE commands become more complex).
+
+On the plus side, denormalization can improve the performance of your database and make it easier to use. On the downside, 
+it can make your database more prone to errors and inconsistencies, and it can be harder to update and maintain. 
+In short, denormalization can be a helpful tool, but it's important to use it wisely!
