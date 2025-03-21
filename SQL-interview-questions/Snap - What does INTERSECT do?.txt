@@ -1,0 +1,15 @@
+INTERSECT combines the results from two or more SELECT statements, but only returns the rows that are exactly the same between 
+the two sets.
+
+For example, say you were doing an HR Analytics project for Snap, and had access to Snap's contractors and employees data. 
+Assume that some employees were previously contractors, and vice versa, and thus would show up in both tables. 
+You could use INTERSECT operator to find all employees who also show up in the contractors table:
+
+
+SELECT first_name, last_name
+FROM snap_employees
+
+INTERSECT
+
+SELECT first_name, last_name
+FROM snap_contractors
