@@ -1,0 +1,9 @@
+As the name implies, the RANK() window function ranks each row within your window/partition. 
+If two rows have the same rank, the next number in the ranking will be the previous rank plus the number of duplicates. 
+For example, if you've got three records tied for 5th place, they'll get the values 5, 6, and 7, and the next row 
+after this 3-way tie will have a rank of 8.
+
+The DENSE_RANK() function assigns a distinct rank to each row within a partition based on the provided column value with no gaps. 
+This function will assign the same rank to two rows if they have the same rank, and give the next row the next rank number. 
+To make this more concrete, imagine you had three records at rank 5 – then, the next rank would be 6.
+
