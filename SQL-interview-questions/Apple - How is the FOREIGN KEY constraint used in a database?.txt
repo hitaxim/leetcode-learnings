@@ -1,0 +1,16 @@
+A FOREIGN KEY is a field in a table that references the PRIMARY KEY of another table. It creates a link between the two tables and ensures that the data in the FOREIGN KEY field is valid.
+
+Say for example you had sales analytics data from Apple's CRM (customer-relationship management) tool.
+
+CREATE TABLE apple_accounts (
+    account_id INTEGER PRIMARY KEY,
+    account_name VARCHAR(255) NOT NULL,
+    industry VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE opportunities (
+    opportunity_id INTEGER PRIMARY KEY,
+    opportunity_name VARCHAR(255) NOT NULL,
+    account_id INTEGER NOT NULL,
+    FOREIGN KEY (account_id) REFERENCES apple_accounts(account_id)
+);
