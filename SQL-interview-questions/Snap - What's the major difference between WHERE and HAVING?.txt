@@ -1,0 +1,24 @@
+Let's address the GROUP BY clause which is used in a SELECT statement to group rows into a set of summary rows. 
+It's typically used in conjunction with aggregate functions such as:
+
+SUM
+AVG
+MIN
+MAX
+The HAVING clause is used to filter the groups created by the GROUP BY clause. 
+It's similar to the WHERE clause, but it is used to specify conditions on the groups created by the GROUP BY clause, 
+rather than on the individual rows of the table.
+
+For example:
+
+SELECT department, SUM(salary)
+FROM snap_employees
+GROUP BY department
+HAVING SUM(salary) > 1000000;
+
+This query retrieves the total salary for each department and groups the rows by department. 
+The HAVING clause then filters the groups to include only Snap departments where the total salary is greater than $1 million
+
+Note that the HAVING clause must be used after the GROUP BY clause and can only reference columns listed in the GROUP BY clause 
+or aggregated columns selected by the SELECT statement.
+
