@@ -1,0 +1,17 @@
+Stored procedures are like functions in Python – they can accept input params and return values, and 
+are used to encapsulate complex logic.
+
+Instead of having to write this query over-and-over again, you could write a stored procedure like the following:
+
+CREATE FUNCTION get_conversion_rate(start_date DATE, end_date DATE, event_name TEXT)
+RETURNS NUMERIC AS
+$BODY$
+BEGIN
+  RETURN (SELECT COUNT(*) FROM events WHERE event_date BETWEEN start_date AND end_date AND event_name = 'conversion')
+          / (SELECT COUNT(*) FROM events WHERE event_date BETWEEN start_date AND end_date AND event_name = 'impression');
+END;
+$BODY$
+LANGUAGE 'plpgsql';
+To call this stored procedure, you'd execute the following query:
+
+SELECT get_conversion_rate('2023-01-01', '2023-01-31', 'conversion');
